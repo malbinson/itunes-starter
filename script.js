@@ -1,24 +1,33 @@
-function run() {
+let a = [ "A", "B" ]
+let guess = 1;
+let position = 0;
 
-    var artist = "drake";
-
-    $.ajax({
-        url: 'https://itunes.apple.com/search?media=music&term=' + artist,
-        dataType: "json",
-        success: process
-    });
+for(let i = 0; i < a.length; i++) {
+    document.getElementById(a[i]).addEventListener("click",() => handleLetter(a[i]))
 }
 
-function process(data) {
-    
-    console.log(data)
+document.getElementById("enter").addEventListener("click",() => handleEnter())
 
-    let tableHTML = "";
+//runs on each click of a letter
+function handleLetter(letter){
+   console.log(letter)
+}
 
-    /*  loop over data and build table rows so that they come
-        out like tableHTML += "<tr><td>" + data[i].songName + "</td></tr>"    */
-    
-    //add completed table into HTML table tag
-    document.getElementById("output").innerHTML = tableHTML;
+//runs on each click of the enter button
+function handleEnter() {
+    interval = setInterval(revealBox,1000);
+}
+
+function revealBox(){
+    position++;
+    document.getElementById("r" + guess + position).style.background = "green";
+    if(position == 5){
+        clearInterval(interval);
+        position = 0;
+        guess++;
+    }
+}
+
+function chooseWord(){
     
 }

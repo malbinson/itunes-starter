@@ -4,14 +4,29 @@
     <meta charset="UTF-8">
     <title>Wordle Starter</title>
     <link href="styles.css" rel="stylesheet"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script src="words.js"></script>
 </head>
 <body>
 
-    <button onclick="run()">GO NOW!</button>
+    <div id="container">
 
-    <table id="output" border="1"></table>
+        <div id="boxes">
+            <span id="r11" class="box"></span>
+            <span id="r12" class="box"></span>
+            <span id="r13" class="box"></span>
+            <span id="r14" class="box"></span>
+            <span id="r15" class="box"></span>
+        </div>
+
+        <div id="keyboard">
+            <span id="A" class="letter">A</span>
+            <span id="B" class="letter">B</span>
+            <span id="enter" class="letter">Enter</span>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
